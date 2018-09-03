@@ -6,7 +6,7 @@ URIs relative to https://a.prota.space/v1, unless otherwise noted
 
 #### Authorization
 
-Need to request with an access token. it is presented in https://console.microbot.is.
+Need to request with an access token. it is presented in https://console.mib.io
 
 Example:
 

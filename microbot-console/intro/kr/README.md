@@ -71,3 +71,5 @@ MicroBot SDK가 적용된 가젯을 제어한 모바일 어플리케이션을 �
 
 ## <a name="3rd"></a>외부 서버 연결
 별도의 서버를 운용중인 경우 MicroBot Cloud에서 제공하는 API를 통해 가젯을 제어할 수 있습니다.
+
+* [Getting started for 3rd Party](https://github.com/thenaran/document/blob/master/microbot-cloud/3rdapis.md)

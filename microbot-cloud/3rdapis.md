@@ -29,6 +29,14 @@ Return value type is a json format.
 2. Requests an endpoint by "**/gadgets/{gadget_id}/endpoints/{command}**". It will run an endpoint with async process. you can get a task ID as the return value. It is used to retrieve a return value of an endpoint.
 3. Get a return value by "**/gadgets/{gadget_id}/results/{task_id}**". You can get a return value.
 
+#### Reserved Task code
+
+| Code | Description |
+| --- | --- |
+| 0 | Success |
+| 1 | Failed |
+| 124 | Timeout |
+
 ### APIs
 #### Users
 ##### **Gets a user's data by email.**
@@ -42,9 +50,13 @@ Parameters
 
 * Path paramters
 
-| Parameter name | value | description |
-| --- | --- | --- |
-| email | string | User's email address registered in the MIBcloud |
+| Parameter name | description |
+| --- | --- |
+| email | User's email address registered in the MIBcloud |
+
+Request Header
+
+* Authorization: Bearer {access_token}
 
 Request body
 
@@ -94,9 +106,13 @@ Parameters
 
 * Path paramters
 
-| Parameter name | value | description |
-| --- | --- | --- |
-| product_id | string | Product ID to get gadgets |
+| Parameter name | description |
+| --- | --- |
+| product_id | Product ID to get gadgets |
+
+Request Header
+
+* Authorization: Bearer {access_token}
 
 Request body
 
@@ -110,7 +126,7 @@ Response
     * Content-Type: application/json
   * Body
 ```json
-{"id": "(string) The generaged gadget ID",
+[{"id": "(string) The generaged gadget ID",
  "mac": "(string) MAC address of a gadget",
  "name": "(string) Default name of a gadget",
  "kind": "(string) Product ID of a gadget",
@@ -124,7 +140,9 @@ Response
  "status": "(integer) status code number of a gadget",
  "rssi": "(integer) RSSI of a gadget with a hub",
  "battery": "(integer) Battery level of a gadget"
- }
+ },
+ ...
+]
 ```
 * HTTP CODE: 400
   * Need to checks arguments
@@ -159,10 +177,14 @@ Parameters
 
 * Path paramters
 
-| Parameter name | value | description |
-| --- | --- | --- |
-| gadget_id | string | Gadget ID to call an endpoint |
-| command | string | An endpoint commandP |
+| Parameter name | description |
+| --- | --- |
+| gadget_id | Gadget ID to call an endpoint |
+| command | An endpoint command |
+
+Request Header
+
+* Authorization: Bearer {access_token}
 
 Request body
 
@@ -218,10 +240,14 @@ Parameters
 
 * Path paramters
 
-| Parameter name | value | description |
-| --- | --- | --- |
-| gadget_id | string | Gadget ID to get an result |
-| task_id | string | Task ID to get when it requested an endpoint |
+| Parameter name | description |
+| --- | --- |
+| gadget_id | Gadget ID to get an result |
+| task_id | Task ID to get when it requested an endpoint |
+
+Request Header
+
+* Authorization: Bearer {access_token}
 
 Request body
 
@@ -272,9 +298,13 @@ Parameters
 
 * Path paramters
 
-| Parameter name | value | description |
-| --- | --- | --- |
-| gadget_id | string | Gadget ID to send a message |
+| Parameter name | description |
+| --- | --- |
+| gadget_id | Gadget ID to send a message |
+
+Request Header
+
+* Authorization: Bearer {access_token}
 
 Request body
 
@@ -282,7 +312,8 @@ Request body
 
 ```json
 {"title": "(string) Title of message",
- "body": "(string) Message"
+ "body": "(string) Message",
+ "all": "(boolean) If true, send a message to all owned hubs of user"
 }
 ```
 
@@ -328,9 +359,13 @@ Parameters
 
 * Path paramters
 
-| Parameter name | value | description |
-| --- | --- | --- |
-| gadget_id | string | Gadget ID to send a message |
+| Parameter name | description |
+| --- | --- |
+| gadget_id | Gadget ID to send a message |
+
+Request Header
+
+* Authorization: Bearer {access_token}
 
 Request body
 
@@ -384,7 +419,7 @@ Event values have many common forms. Please refer to a common value item.
 | --- | --- |
 | method | POST |
 | url | {registered hook url} |
-| header | Authorization: Bearer {registered client key} |
+| header | Authorization: Bearer {registered hook client key} |
 | | Content-type: application/json |
 | body | ```{"gadget_id": {gadget_id}, "topic": {event_topic}, "value": {event_value}``` |
 

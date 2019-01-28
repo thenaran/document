@@ -48,7 +48,7 @@ Defines the Endpoint and Event that the gadget needs to work with. Through the d
 ## <a name="firmware"></a>Firmware
 1. Go to the [Endpoints]-[Specifications] menu and click Header.![](../imgs/header_download.png)
 1. Select the model and download the header file![](../imgs/header_download_select_model.png)
-1. Create the firmware using the downloaded header file. Please refer to the following link. [Link](https://github.com/thenaran/document/blob/master/mickrobot-nrf/README.md)
+1. Create the firmware using the downloaded header file. Please refer to the following link. [Link](https://github.com/thenaran/document/blob/master/microbot-nrf/README.md)
 1. To register the created firmware, go to [Product]-[Model] and click Register button![](../imgs/firmware_register.png)
 1. Upload the created firmware and register it. Notice that the version shown in the following screen should be the same as the version of the downloaded header file![](../imgs/firmware_register_detail.png)
 

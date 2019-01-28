@@ -49,7 +49,7 @@ MiB IoT Platform을 통해 개발, 테스트, 배포를 하기 위해서는, MiB
 ## <a name="firmware"></a>펌웨어
 1. [Endpoints]-[Specifications] 메뉴로 이동하여 Header를 클릭합니다..![](../imgs/header_download.png)
 1. 모델을 선택하여 헤더파일을 다운로드 받습니다.![](../imgs/header_download_select_model.png)
-1. 다운로드 받은 헤더파일을 이용하여 펌웨어를 생성합니다. 다음의 링크를 참고해주세요. [Link](https://github.com/thenaran/document/blob/master/mickrobot-nrf/README.md)
+1. 다운로드 받은 헤더파일을 이용하여 펌웨어를 생성합니다. 다음의 링크를 참고해주세요. [Link](https://github.com/thenaran/document/blob/master/microbot-nrf/README.md)
 1. 생성한 펌웨어를 등록하기 위하여 [Product]-[Model]로 이동을 하여 Register 버튼을 클릭합니다.![](../imgs/firmware_register.png)
 1. 생성한 펌웨어를 업로드하여 등록을 합니다. 주의사항은 아래의 화면에서 보이는 버전과 다운로드 받은 헤더파일의 버전이 같아야 합니다.![](../imgs/firmware_register_detail.png)
 

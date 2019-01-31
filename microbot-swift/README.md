@@ -49,7 +49,8 @@ $ pod install
 ```
 
 ### Manually
-1. Download the Microbot SDK in Release directory
+1. Download the Microbot SDK in Release directory [Link](release/0.0.1/MicroBot.framework.zip)
+
 2. Select the project file from the project navigator on the left side of the project window.
 3. Select the target for where you want to add frameworks in the project settings editor.
 4. Select the “Build Phases” tab, and click the small triangle next to “Link Binary With Libraries” to view all of the frameworks in your application.
@@ -126,19 +127,19 @@ class EventReciever: MicroBotDelegate {
 		super.init()
 		Microbot.shared.delegate = self
 	}
-	
+
 	func mibReceivedAuthEvent(_ user: MIBUser, topic: AuthEvent, data: [String: Any]) {
-		print("Recieved event from user. topic: \(topic)")  
+		print("Recieved event from user. topic: \(topic)")
 	}
-	
+
 	func mibReceivedGadgetEvent(_ gadget: MIBGadget, topic: GadgetEvent, data: [String: Any]) 	{
-	   print("Recieved event from hub. topic: \(topic)")   
+	   print("Recieved event from hub. topic: \(topic)")
 	}
-    
+
 	func mibReceivedHubEvent(_ hub: MIBHub, topic: HubEvent, data: [String: Any]) {
-		print("Recieved event from hub. topic: \(topic)")  
+		print("Recieved event from hub. topic: \(topic)")
 	}
-	
+
 }
 
 ```
@@ -158,7 +159,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+
     // Recieve an authroization event from MicroBotDelegate
     func mibReceivedAuthEvent(_ user: MIBUser, topic: AuthEvent, data: [String: Any]) {
         print("Recieved event from user. topic: \(topic)")
@@ -190,12 +191,12 @@ class ViewController: UIViewController {
 import MicroBot
 
 class ViewController: UIViewController {
-    
+
     var scannedGadgets = [MIBGadget]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     @IBAction func selectedScannedGadgetButton(_ sender: Any) {
 		scannedGadget.pair(optSecret).done { (response) in
 		if let error = response.error {
@@ -203,15 +204,15 @@ class ViewController: UIViewController {
 			}
 		})
 	}
-      
+
     // Recieve a pair event from MicroBotDelegate
     func mibReceivedGadgetEvent(_ gadget: MIBGadget, topic: GadgetEvent, data: [String: Any]) {
    		switch (topic) {
    		case .paired:
    			print("Paired with new gadget: \(gadget.name)")
-   		case .pairFailed 
+   		case .pairFailed
    			print("Failed to pair with gadget: \(gadget.name)")
-   		.... 
+   		....
     }
 }
 
@@ -223,7 +224,7 @@ import MicroBot
 class ViewController: UIViewController {
 
 	func press(_ gadget: MIBGadget, otp: Int) {
-	    // Call an endpoint of Gadget 
+	    // Call an endpoint of Gadget
        gadget.callEndpoint(otp, name: "press", args: 1).done { response in
            guard response.error == nil else {
 				// handle error

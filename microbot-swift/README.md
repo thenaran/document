@@ -49,7 +49,7 @@ $ pod install
 ```
 
 ### Manually
-1. Download the Microbot SDK in Release directory [Link](release/0.0.1/MicroBot.framework.zip)
+1. Download the Microbot SDK. [(Download)](release/0.0.1/MicroBot.framework.zip)
 
 2. Select the project file from the project navigator on the left side of the project window.
 3. Select the target for where you want to add frameworks in the project settings editor.

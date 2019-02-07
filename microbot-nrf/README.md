@@ -31,7 +31,7 @@ IDE
 Firmware Download Tool
 -
 * J-Link is required.
-	* Driver : https://www.segger.com/downloads/jlink/ (Normally Keil uVision installation is carried out at the same time.)	
+	* Driver : https://www.segger.com/downloads/jlink/ (Normally Keil uVision installation is carried out at the same time.)
 
 Configuration
 ==
@@ -42,7 +42,7 @@ Define Endpoints or Events on MicrobotCloud
 	* An Endpoint is represented by a Request which represents an action and the components of the Request are like the following:
 		* Request
 			* name : This is the call name for EndPoint.
-			* params : This defines the payload of the endpoint and the payload of the Return. Payload can declare a multiple List. The declared payload is provided as a single structure.				
+			* params : This defines the payload of the endpoint and the payload of the Return. Payload can declare a multiple List. The declared payload is provided as a single structure.
 				* name : This is the member variable name of the structure.
 				* type : This is the data type of the member variable.
 					* char : 1 Byte
@@ -108,7 +108,7 @@ Define Endpoints or Events on MicrobotCloud
 
         ``` c
         typedef enum
-        { 
+        {
           MIB_EP_SET_PIN = 0,
           MIB_EP_CLEAR_PIN = 1,
         } request_ids;
@@ -116,34 +116,34 @@ Define Endpoints or Events on MicrobotCloud
 
         typedef struct set_pin_t set_pin_t;
         struct set_pin_t
-        { 
+        {
           uint8_t pin_number;
         };
 
         typedef struct set_pin_return_t set_pin_return_t;
         struct set_pin_return_t
-        { 
+        {
           uint8_t result;
         };
         static set_pin_return_t* set_pin_return_size;
 
         typedef struct clear_pin_t clear_pin_t;
         struct clear_pin_t
-        { 
+        {
           uint8_t pin_number;
         };
 
         typedef struct clear_pin_return_t clear_pin_return_t;
         struct clear_pin_return_t
-        { 
+        {
           uint8_t result;
         };
         static clear_pin_return_t* clear_pin_return_size;
-                
+
         void set_pin(ep_hnd* _hnd, set_pin_t* data_t);
         void clear_pin(ep_hnd* _hnd, clear_pin_t* data_t);
         ```
-  
+
 
 		* The components of Event are as follows.
 			* name : This becomes the Event handler name.
@@ -157,7 +157,7 @@ Define Endpoints or Events on MicrobotCloud
 					* uint16_t : 2 Byte
 					* uint32_t : 4 Byte
 				* length : the length of the argument
-				* default : initialize value 
+				* default : initialize value
 				* Example : Event (JSON)
 
 
@@ -181,18 +181,18 @@ Define Endpoints or Events on MicrobotCloud
 
           ``` c
           typedef enum
-          { 
+          {
             MIB_EVT_PIN_INTERRUPT = 0,
           } event_ids;
 
           typedef struct pin_interrupt_t pin_interrupt_t;
           struct pin_interrupt_t
-          { 
+          {
             uint8_t pin_number;
             uint8_t pin_state;
           };
           ```
-        
+
 JSON Example
 -
 * If you upload example.json to the Microbot Console, you can download the following gadget.h.
@@ -284,45 +284,45 @@ static char MIB_PRODUCT_NAME[PRODUCT_NAME_LEN]  = "mibio";  // max 12
 
 #pragma pack(push,1)
 typedef enum
-{ 
+{
   MIB_EP_SET_PIN = 0,
   MIB_EP_CLEAR_PIN = 1,
 } request_ids;
 
 typedef struct set_pin_t set_pin_t;
 struct set_pin_t
-{ 
+{
   uint8_t pin_number;
 };
 
 typedef struct set_pin_return_t set_pin_return_t;
 struct set_pin_return_t
-{ 
+{
   uint8_t result;
 };
 static set_pin_return_t* set_pin_return_size;
 
 typedef struct clear_pin_t clear_pin_t;
 struct clear_pin_t
-{ 
+{
   uint8_t pin_number;
 };
 
 typedef struct clear_pin_return_t clear_pin_return_t;
 struct clear_pin_return_t
-{ 
+{
   uint8_t result;
 };
 static clear_pin_return_t* clear_pin_return_size;
 
 typedef enum
-{ 
+{
   MIB_EVT_PIN_INTERRUPT = 0,
 } event_ids;
 
 typedef struct pin_interrupt_t pin_interrupt_t;
 struct pin_interrupt_t
-{ 
+{
   uint8_t pin_number;
   uint8_t pin_state;
 };
@@ -337,7 +337,7 @@ static uint32_t mib_init(mib_init_t* init_data) {
   uint32_t err_code = NRF_SUCCESS;
   init_data->endpoints = (p_endpoints*)malloc(sizeof(p_endpoints) * REQUEST_CNT);
   init_data->return_size = (uint32_t*)malloc(sizeof(uint32_t) * REQUEST_CNT);
-  
+
   init_data->endpoints[MIB_EP_SET_PIN] = set_pin;
   init_data->return_size[MIB_EP_SET_PIN] = sizeof(*set_pin_return_size);
 
@@ -387,20 +387,18 @@ Example project options
 				* IRAM1 (start : 0x20002800, size 0xD800, noInit: clear)
         ![](res/Usage-project-4.png)
 		* C/C++ : Define (text input box) should show all of the following options.
-			* BLE\_DFU\_APP_SUPPORT 
+			* BLE\_DFU\_APP_SUPPORT
 			* BLE\_STACK\_SUPPORT_REQD
-			* NRF51 or NRF52 (Please Choice your device) 
+			* NRF51 or NRF52 (Please Choice your device)
 			* S130 & S132 (Please Choice your device, nrf51:S130 & nrf52:S132)
-			* SWI\_DISABLE0 
-			* SOFTDEVICE\_PRESENT 
+			* SWI\_DISABLE0
+			* SOFTDEVICE\_PRESENT
 			* NRF\_LOG\_USES_UART=1
-			* Copy this codes 
-
-      ```
-      BLE_DFU_APP_SUPPORT BLE_DFU_APP_SUPPORT BLE_STACK_SUPPORT_REQD SWI_DISABLE0 SOFTDEVICE_PRESENT NRF51&NRF52 S130&S132
-      ```
-
-      ![](res/Usage-project-5.png)
+			* Copy this codes
+              ```
+              BLE_DFU_APP_SUPPORT BLE_DFU_APP_SUPPORT BLE_STACK_SUPPORT_REQD SWI_DISABLE0 SOFTDEVICE_PRESENT NRF51&NRF52 S130&S132
+              ```
+          ![](res/Usage-project-5.png)
 		* Debug : Use drop box must be selected as J-LINK / J-TRACE Cortex. Press 'Settings' on the right to see the following options.
     ![](res/Usage-project-6.png)
 			* Debug tab
@@ -446,7 +444,7 @@ Import Microbot-NRF library to Example Project
 	3. Select the C / C ++ tab and enter the following in 'Include Paths':
 		* To register the header file of the lib folder as the default path in the project, type the following:
     ![](res/Usage-project-14.png)
-  
+
 Applying gadget.h to the Microbot-NRF library
 -
 * Assume that you include '. \\ lib' in the Keil Project Option in the step above.
@@ -464,7 +462,7 @@ Applying gadget.h to the Microbot-NRF library
 #include "nrf_gpio.h"
 #include "nrf_drv_gpiote.h"
 
-// Step 2 : for the mib_init_t 
+// Step 2 : for the mib_init_t
 #define LED_0          				8					// BLUE
 #define LED_1          				9 				// GREEN
 #define LED_2          				10				// RED
@@ -477,7 +475,7 @@ Applying gadget.h to the Microbot-NRF library
 #define APP_VERSION_MINOR			37
 #define INTERRUPT_PIN 				12
 
-// Step 3 : define mib_init_t 
+// Step 3 : define mib_init_t
 static mib_init_t        microbot_init;
 
 // Step 4 : microbot-nrf event_handler, more case 'Microbot sdk document'
@@ -563,9 +561,9 @@ int main(void)
 ```
 
 * Description of example 'main.c'
-	* Step 1 : include "gadget.h" 
-	* Step 2 : declare pin number variable for the mib_init_t 
-	* Step 3 : declare mib_init_t structure 
+	* Step 1 : include "gadget.h"
+	* Step 2 : declare pin number variable for the mib_init_t
+	* Step 3 : declare mib_init_t structure
 	* Step 4 : definition microbot-nrf event_handler, more case 'Microbot-SDK Document'
 	* Step 5 : Copy & Paste of endpoint functions in gadget.h, and Definition of endpoints
 	* Step 6 : call 'mib_init()'! do not call 'mib_initialize()'

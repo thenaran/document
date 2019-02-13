@@ -1,0 +1,49 @@
+{
+  "product": "mibio",
+  "version": "0.1",
+  "requests": [{
+      "name": "set_pin",
+      "params": [{
+        "name": "pin_number",
+        "type": "uint8_t",
+        "length": 1,
+        "default": 14
+      }],
+      "returns": [{
+        "name": "result",
+        "type": "uint8_t",
+        "length": 1
+      }],
+      "timeout": 5
+    },
+    {
+      "name": "clear_pin",
+      "params": [{
+        "name": "pin_number",
+        "type": "uint8_t",
+        "length": 1,
+        "default": 14
+      }],
+      "returns": [{
+        "name": "result",
+        "type": "uint8_t",
+        "length": 1
+      }],
+      "timeout": 5
+    }
+  ],
+  "events": [{
+    "name": "pin_interrupt",
+    "params": [{
+        "name": "pin_number",
+        "type": "uint8_t",
+        "length": 1
+      },
+      {
+        "name": "pin_state",
+        "type": "uint8_t",
+        "length": 1
+      }
+    ]
+  }]
+}

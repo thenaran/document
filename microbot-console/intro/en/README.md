@@ -11,8 +11,7 @@ This guide allows you to connect Bluetooth gadgets to the MiB IoT Platform. This
 1. [Create Organization](#organization)
 1. [Create Product](#product)
 1. [Create Model](#model)
-1. [Registration of Specification](#endpoint)
-1. [Firmware registration](#firmware)
+1. [Registration of Specification and Firmware](#endpoint_firmware)
 1. [Test](#test)
 1. [Release](#release)
 
@@ -38,19 +37,11 @@ To develop, test, and deploy through the MiB IoT Platform, you must use the MiB 
 1. Select the name and type to register the model. Models can be useful when you want to make a difference in version or function even if they are the same product. Basically, at least one model must be registered per product.![](../imgs/model_create.png)
 **Currently supported models are NRF51 and NRF52.*
 
-## <a name="endpoint"></a>Endpoint Specification
+## <a name="endpoint_firmware"></a>Endpoint Specification and Firmware
 Defines the Endpoint and Event that the gadget needs to work with. Through the defined statement, MiB IoT Platform invokes the Endpoint and dispatches Event
 
-1. Go to [Product]-[Model] menu and get the Example file![](../imgs/example_download.png)
-1. Unzip the downloaded file and refer to the specification example file to define the endpoint and the event.[Link](https://github.com/thenaran/document/blob/master/microbot-nrf/README.md#define-endpoints-or-events-on-microbotcloud)
-1. Upload the created statement to [Console](https://console.mib.io) and register it![](../imgs/specifications_upload.png)
-
-## <a name="firmware"></a>Firmware
-1. Go to the [Endpoints]-[Specifications] menu and click Header.![](../imgs/header_download.png)
-1. Select the model and download the header file![](../imgs/header_download_select_model.png)
-1. Create the firmware using the downloaded header file. Please refer to the following link. [Link](https://github.com/thenaran/document/blob/master/microbot-nrf/README.md)
-1. To register the created firmware, go to [Product]-[Model] and click Register button![](../imgs/firmware_register.png)
-1. Upload the created firmware and register it. Notice that the version shown in the following screen should be the same as the version of the downloaded header file![](../imgs/firmware_register_detail.png)
+1. Refer to [MicroBot NRF Getting Started](https://github.com/thenaran/document/blob/master/microbot-nrf/README.md) and complete the specification, register, and generate the firmware.
+    * Link : [Link](https://github.com/thenaran/document/blob/master/microbot-nrf/README.md)
 
 ## <a name="mobile"></a> Mobile apps
 Create mobile applications to control gadgets with MicroBot SDK. Through the mobile application, the gadget communicates with the MiB IoT Platform. Please develop your mobile application with the following information.

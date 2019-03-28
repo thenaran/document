@@ -51,7 +51,7 @@ Before you begin, you need to set up a few things in your environment:
 ## Configuration
 #### Setting FirebaseSevice in Android Project
 1. Please refer to the following link to create and configure Firebase Project.
- * Link : [Link](#https://console.firebase.google.com/)
+ * Link : [Link](https://console.firebase.google.com/)
 
 1. Make you Firebase project first.
 

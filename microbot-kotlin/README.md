@@ -6,7 +6,12 @@ This document contains a description of initial setup and basic function usage w
 
 ## History
  * 2019-03-27
- 	* Android SDK First Realese
+    * Android SDK First Realese
+ * 2019-04-02
+    * Released version 0.0.2 of Framework
+        * Stabilize
+        * Add hub property - "status" value
+    * Updated the api document
 
 ## Step
 1. [Prerequisites](#Prerequisites)
@@ -30,7 +35,7 @@ Before you begin, you need to set up a few things in your environment:
 
 #### Manually
 
- 1. Download the MicroBot Kotlin-SDK [(Download)](https://github.com/thenaran/document/blob/master/microbot-kotlin/release/0.0.1/microbot_sdk.zip)
+ 1. Download the MicroBot Kotlin-SDK [(Download)](https://github.com/thenaran/document/blob/master/microbot-kotlin/release/)
 
  1. Unzip the downloaded SDK and move the Framework file to the project folder
 

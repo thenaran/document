@@ -14,6 +14,11 @@ This document contains a description of initial setup and basic function usage w
     * Changed the wrong function name
       * mibReceivedGadgetEvenet -> mibReceivedGadgetEvent
   * Updated the api document
+* 2019-04-02
+  * Released version 0.0.3 of Framework
+    * stabilize
+    * add hub property - "status" value
+  * Updated the api document
 
 ## Step
 
@@ -41,7 +46,7 @@ Before you begin, you need to set up a few things in your environment:
 
 #### Manually
 
-1. Download the MicroBot Swift-SDK ([Download](https://github.com/thenaran/document/blob/master/microbot-swift/release/0.0.2/MicroBot.framework.zip))
+1. Download the MicroBot Swift-SDK ([Download](https://github.com/thenaran/document/blob/master/microbot-swift/release))
 1. Unzip the downloaded SDK and move the Framework file to the project folder.
 1. In Build Phases, click the [+] button in the Link Binary Libraries item.
 

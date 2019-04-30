@@ -4,6 +4,7 @@ This guide provides a more detailed description of the NRF development.
 
 ## History
 * 2019-02-22 : Overall changes have been made.
+* 2019-04-19 : Update Screenshot about MiB Console
 
 ## Defination
 
@@ -61,7 +62,7 @@ The Nordic development board links are as follows.
 
 You can create a Firmware file, you must complete a specification. Fill out the specification as follows:
 
-1. Access the [MiB Console](https://console.mib.io), go to the [Product]-[Model] and Download example file.
+1. Access the [MiB Console](https://console.mib.io), go to the [Dev] - [Product] - [Model] and Download example file.
 
     ![ ](res/example_download.png)
 
@@ -69,12 +70,12 @@ You can create a Firmware file, you must complete a specification. Fill out the 
 
     ![ ](res/example_json.png)
 
-1. Write the Product ID into the Product item in the specification. The value of the Product item in the specification and the Product ID of the MiB Console must be the same. Product ID can be found in the Mib Console under [Product] - [General].
+1. Write the Product ID into the Product item in the specification. The value of the Product item in the specification and the Product ID of the MiB Console must be the same. Product ID can be found in the Mib Console under [Dev] - [Product] - [General].
 
     ![ ](res/console_product_id.png)
     ![ ](res/specification_product_id.png)
 
-1. Save the specification and upload it to the MiB console. Upload is possible after move to [Endpoints] - [Specifications] in the MiB Console.
+1. Save the specification and upload it to the MiB console. Upload is possible after move to [Dev] - [Endpoints] - [Specifications] in the MiB Console.
 
     ![ ](res/specifications_upload.png)
 
@@ -86,7 +87,7 @@ You can create a Firmware file, you must complete a specification. Fill out the 
 
 A header file is required to create a firmware file. This header file is made based on the specification. The header file can be accessed to the console and downloaded. Download the header file as follows
 
-1. Access to the [MiB Console](https://console.mib.io),  go to [Endpoints] - [Specifications] and click on the following menu to download the header file.
+1. Access to the [MiB Console](https://console.mib.io),  go to [Dev] - [Endpoints] - [Specifications] and click on the following menu to download the header file.
 
     ![ ](res/header_download.png)
 
@@ -201,8 +202,11 @@ Gadgets can update firmware by uploading the generated firmware to the MiB Conso
 
       ![ ](res/hex_path_nrf52.png)
 
-1. Access to the [MiB Console](https://console.mib.io)
-1. To register the created firmware, go to [Product]-[Model] and click Register button
+1. Access to the [MiB Console](https://console.mib.io). and go to [Dev] - [Product] - [Model] and click the [Firmware].
+
+    ![ ](res/firmware_register_path.png)
+
+1. To register the created firmware, click [Register] button
 
     ![ ](res/firmware_register.png)
 

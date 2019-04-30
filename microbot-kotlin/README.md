@@ -8,10 +8,17 @@ This document contains a description of initial setup and basic function usage w
  * 2019-03-27
     * Android SDK First Realese
  * 2019-04-02
-    * Released version 0.0.2 of Framework
+    * Released version 0.0.2 of SDK
         * Stabilize
         * Add hub property - "status" value
     * Updated the api document
+ * 2019-04-19
+    * Update Screenshot about MiB Console
+    * Add gadget property - tags value
+    * Add update tags api
+    * Fix minor bugs
+ * 2019-04-25
+    * Released version 0.0.3 of SDK
 
 ## Step
 1. [Prerequisites](#Prerequisites)
@@ -35,18 +42,18 @@ Before you begin, you need to set up a few things in your environment:
 
 #### Manually
 
- 1. Download the MicroBot Kotlin-SDK [(Download)](https://github.com/thenaran/document/blob/master/microbot-kotlin/release/)
+ 1. Download the MicroBot Kotlin-SDK [(Download)](https://github.com/thenaran/document/blob/master/microbot-kotlin/release/0.0.3/microbot_sdk_0.0.3.zip)
 
  1. Unzip the downloaded SDK and move the Framework file to the project folder
 
  1. For implement SDK to your project, Write down the path of the SDK you moved into your project, in the [reportories]-[maven] and [dependencies] section
 
 	 ![](res/installation1.png)
-	 
+
  1. If you'd done all the above steps, click the [Sync Now] button
 
  	![](res/installation2.png)
- 	
+
  1. If you see a message that "synced successfully", it means that the SDK has been implemented in your project.
 
  	![](res/installation3.png)
@@ -66,7 +73,7 @@ Before you begin, you need to set up a few things in your environment:
 
 	![ ](res/Notification1-1.png)
 
-1. Add your app setting and click Android Icon. 
+1. Add your app setting and click Android Icon.
 
 	![ ](res/Notification2.png)
 
@@ -81,44 +88,41 @@ Before you begin, you need to set up a few things in your environment:
 1. After you add code to Project-level Gardle file and App-level gradle file, [Sync now] button will show. Click the button.
 
 	![ ](res/Notification5.png)
-	
+
 1. Add service to your Firebase in AndroidManifest.xml for app level.
 
 	![ ](res/Notification10-1.png)
-	
-	
+
+
 #### Configuring Notification key
 
 1. Go to Firebase Project and click [Setting Icon] - [Project setiings]
-	
+
 	![ ](res/key1.png)
 
 1. Go to [Cloud Messaging] tab and copy [Sever Key]
 
 	![ ](res/key2.png)
 
-1. Go to the MiB Console and click [Organization] of the profile in the upper right corner.
+1. Go to the MiB Console and Select the [Management] menu at the bottom left. Then select the [Organization] - [Notification Key] menu and then the Register Android button.
 
 	![ ](res/key3.png)
 
-1. Go to the [Notification Key] tab and click the [Register IOS] button.
-
-    ![ ](res/key4.png)
-
 1. Fill in the following items. If it all done, click [Register] button
-	* Key : Paste server key that copied from Firebase Console
-	* Package Name : Your Package name of Android Project
+    * Key : Paste server key that copied from Firebase Console
+    * Package Name : Your Package name of Android Project. This is the hub type.
+    * Allow List : You can use the selected Product Model from a hub that uses Package Name.
 
-	![ ](res/key5.png)
+	![ ](res/key4.png)
 
 #### Add Your Product keys
 You need to add a product key to communicate with gadgets. Follow the steps below to add the product key.
 
-1. Access the MiB console and go to [Product] - [General]. Copy the Product ID and Product Key values shown on the screen.
+1. Access the MiB console and go to [Dev] - [Product] - [General]. Copy the Product ID and Product Key values shown on the screen.
 
-	![ ](res/key6.png)
+	![ ](res/key5.png)
 
-1. Add your product key in statrtService code of your class 
+1. Add your product key in statrtService code of your class
 
 ```kotlin
 val productKeyMap = hashMapOf("your_gadget_name" to "enter_your_product_key_from_mib_console") // https://console.mib.io
@@ -128,7 +132,7 @@ startService(mibIntent)
 
 
 
-## Usage 
+## Usage
 
 #### Initialize
 

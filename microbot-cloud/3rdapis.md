@@ -7,13 +7,14 @@ URIs relative to https://a.prota.space/v1, unless otherwise noted
 ### History
 
 * 2019-02-22 : Authorization add more description
+* 2019-04-19 : ScreenShot Update
 
 #### Authorization
 
 Need to request with an access token. it is presented in https://console.mib.io
 
 1. Access to the [MiB Console](https://console.mib.io).
-1. Go to [Product] - [Authorization]
+1. Go to [Dev] - [Product] - [Authorization]
 1. You can use the Access Token on the screen.
   ![ ](res/access_token.png)
 

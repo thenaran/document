@@ -19,6 +19,12 @@ This document contains a description of initial setup and basic function usage w
     * stabilize
     * add hub property - "status" value
   * Updated the api document
+* 2019-04-19
+  * Update Screenshot about MiB Console
+  * add gadget property - tags value
+  * add update tags api
+* 2019-04-25
+  * Released version 0.0.4 of Framework
 
 ## Step
 
@@ -46,7 +52,7 @@ Before you begin, you need to set up a few things in your environment:
 
 #### Manually
 
-1. Download the MicroBot Swift-SDK ([Download](https://github.com/thenaran/document/blob/master/microbot-swift/release))
+1. Download the MicroBot Swift-SDK ([Download](https://github.com/thenaran/document/blob/master/microbot-swift/release/0.0.4/MicroBot.framework.zip))
 1. Unzip the downloaded SDK and move the Framework file to the project folder.
 1. In Build Phases, click the [+] button in the Link Binary Libraries item.
 
@@ -74,18 +80,15 @@ Before you begin, you need to set up a few things in your environment:
 
 1. Please refer to the following link to create and configure APNS.
     * Link : [Link](https://medium.com/@ankushaggarwal/generate-apns-certificate-for-ios-push-notifications-85e4a917d522)
-1. Go to the MiB Console and click [Organization] of the profile in the upper right corner.
-
-    ![ ](res/move_noti_menu.png)
-
-1. Go to the [Notification Key] tab and click the [Register IOS] button.
+1. Go to the MiB Console and Select the [Management] menu at the bottom left. Then select the [Organization] - [Notification Key] tab and click the [Register IOS] button.
 
     ![ ](res/notification_ios.png)
 
 1. Fill in the following items. Fill in all and register.
     * State : Choose whether to be for development or for commercial use.
-    * Bundle ID : Fill in the generated app id.
+    * Bundle ID : Fill in the generated app id. This is the hub type.
     * Password : p12 Fill in the password entered during the authentication process.
+    * Allow List : You can use the selected Product Model from a hub that uses Bundle ID.
     * File : Select the created p12 file.
 
     ![ ](res/noti_ios.png)
@@ -112,7 +115,7 @@ Before you begin, you need to set up a few things in your environment:
 
 You need to add a product key to communicate with gadgets. Follow the steps below to add the product key.
 
-1. Access the MiB console and go to [Product] - [General]. Copy the Product ID and Product Key values shown on the screen.
+1. Access the MiB console and go to [Dev] - [Product] - [General]. Copy the Product ID and Product Key values shown on the screen.
 
     ![ ](res/console_product_key.png)
 
